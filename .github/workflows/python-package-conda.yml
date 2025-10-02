@@ -1,4 +1,10 @@
-name: Python Package using Conda
+   ( for i in ftp://ftp.afrinic.net/pub/stats/afrinic/delegated-afrinic-extended-latest \
+          ftp://ftp.apnic.net/pub/stats/apnic/delegated-apnic-extended-latest \
+          ftp://ftp.arin.net/pub/stats/arin/delegated-arin-extended-latest \
+          ftp://ftp.lacnic.net/pub/stats/lacnic/delegated-lacnic-extended-latest \
+          ftp://ftp.ripe.net/ripe/stats/delegated-ripencc-extended-latest; do
+          wget "$i" -O - ;
+    done ) | tee delegated | target/release/buildername: Python Package using Conda
 
 on: [push]
 
